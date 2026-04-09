@@ -1,10 +1,10 @@
 # Persona (Denkmodell) Ellie Müller
 
----
-|## Name: Ellie Müller|
-|## Alter: 22 Jahre alt|
-|## Beruf: Studierende an der Universität Zürich|
----
+
+## |Name: Ellie Müller|
+## |Alter: 22 Jahre alt|
+## |Beruf: Studierende an der Universität Zürich|
+
 
 ## Kurzbiographie:
 Ellie lebt in Zürich und besucht die Universität Zürich. Sie ist 22 Jahre alt und wohnt noch bei den Eltern. Sie hat einen stressigen Alltag mit Prüfungen, Hausaufgaben und Freizeitaktivitäten. Seit ein paar Jahren hat sie ihre Periode und ist immer noch damit überfordert.
