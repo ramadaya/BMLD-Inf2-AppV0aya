@@ -27,46 +27,38 @@ Ein Misserfolg wäre es hingegen, wenn die Testpersonen keinen Nutzen in der App
 
 # Nutzertest
 
-|---------------------------------- | ----------------------------------|
 | was war gut? | was war schlecht? |
 |---------------------------------- |----------------------------------|
-| -Startseite
-    - gut verständlich 
-    - Pflichtfelder sofort erkannt
-- Homebildschirm
-    - Navigation grundsätzlich verständlich
-    - Zyklus klar dargestellt
-- Kalender
-    - Übersichtlich 
-    - einfache Bedienung
-    - Vorgehen intuitiv klar
-- LifeStyle
-    - Inhalte sinnvoll aufgebaut
-    - Idee der Phasenauswahl positiv
-    - Auswahl (Sport, Food, Fokus, Mood) verständlich
-- Sport
-    - Grafik ansprechend und klar 
-    - Infobox verständlich
-- Foods
-    - Texte gut verständlich
-    - Cook Book finden alle eine gute Idee
-    - Rezepte sinnvoll und verständlich
-- Moods
-    - klar verständlich
-    - einfache Nutzung
-- Partner
-    - gut verständlich
-    - von allen als Highlight gesehen
-    - hebt App von anderen ab| - Homebildschirm
-    - Symbole unten nicht klar verständlich 
-- LifeStyle
-    - Logo sehr undeutlich
-    - Infobox/Beschreibung für Zyklusphasen fehlt
-- Moods
-    - weniger Begeisterung
-    - Empfehlung: Tagebuchfunktion (Notizen für Symptome & Überwachung) |
+| Startseite | Homebildschirm |
+| - gut verständlich | - Symbole unten nicht klar verständlich |
+| - Pflichtfelder sofort erkannt | Life Sytle |
+|Homebildschirm | - Logo sehr undeutlich | 
+| - Navigation grundsätzlich verständlich | - Infbox/Beschreibung für Zyklusphasen fehlt |
+| - Zyklus klar dargestellt | Modus |
+| Kalender | - weniger Begeisterung --> Empfehlung: Tagebuchfunktion (Notizen für Symptome & Protokoll) |
+| - Übersichtlich | |
+| - einfache Bedienung | |
+| - Vorgehen intuitiv klar | |
+| LifeStyle | |
+| - Inhalte sinnvoll aufgebaut | |
+| - Idee der Phasenauswahl positiv | |
+| - Auswahl (Sport, Food, Fokus, Mood) verständlich | |
+| Sport | |
+| - Grafik ansprechend und klar | |
+| - Infobox verständlich | |
+| Foods | |
+| - Texte gut verständlich | |
+| - Cook Book finden alle eine gute Idee | |
+| - Rezepte sinnvoll und verständlich | |
+| Moods | |
+| - klar verständlich | |
+| - einfache Nutzung | |
+|Partner | |
+| - gut verständlich | |
+| - von allen als Highlight gesehen | |
+| - hebt App von anderen ab| |
 |---------------------------------- | ----------------------------------|
 | neue Ideen? | neue Probleme? |
 |---------------------------------- | ----------------------------------|
-|- „Focus & Mood“ zu „Symptome“ ändern → als Tagebuchfunktion nutzen
-- Infobox/Beschreibung bei Lifestyle-Phasen hinzufügen | - Viele ähnliche Apps existieren bereits zur Berechnung des nächsten Zyklus |
+| - „Focus & Mood“ zu „Symptome“ ändern → als Tagebuchfunktion nutzen |
+| - Infobox/Beschreibung bei Lifestyle-Phasen hinzufügen | - Viele ähnliche Apps existieren bereits zur Berechnung des nächsten Zyklus |
