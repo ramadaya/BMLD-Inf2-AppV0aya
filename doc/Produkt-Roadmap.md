@@ -1,5 +1,8 @@
 # Produkt Roadmap
 
+## Ziel der Roadmap 
+Diese Roadmap zeigt, in welcher Reihenfolge die Funktionen der App entwickelt werden. 
+
 ## Version 1 (Basis)
 - Login
 - Anzeige der aktuellen Zyklusphase
@@ -11,9 +14,9 @@
 - Übersicht aller Zyklusphasen
 - Detailansicht pro Phase (Sport, Ernährung, Fokus)
 - Energie-Graph
-- Partner feature
+- Partner feature (z.B. Einsicht für Partner)
 
 ## Version 3 (Erweitert)
-- Symptome anzeigen
+- Symptome tracken 
 - Ernährungsempfehlungen
 - Rezepte anzeigen und speichern
