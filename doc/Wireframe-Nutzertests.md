@@ -79,7 +79,7 @@ Beim Partner-Bereich hatten -wie bereits beim Home Screen – mehrere Testperson
 
 | neue Ideen? | neue Probleme? |
 |-------------|----------------|
-| - Neue Logos erstellen + Beschriftung hinzufügen <br> - „Focus & Mood“ zu „Symptome“ ändern → als Tagebuchfunktion nutzen <br> - Infobox/Beschreibung bei Lifestyle-Phasen hinzufügen | - Viele ähnliche Apps existieren bereits zur Berechnung des nächsten Zyklus |
+| - „Focus & Mood“ zu „Symptome“ ändern → als Tagebuchfunktion nutzen <br> - Infobox/Beschreibung bei Lifestyle-Phasen hinzufügen | - Viele ähnliche Apps existieren bereits zur Berechnung des nächsten Zyklus |
 
 ## Bewertung:
 
