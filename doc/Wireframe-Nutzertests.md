@@ -57,7 +57,8 @@ Ein Misserfolg wäre es hingegen, wenn die Testpersonen keinen Nutzen in der App
 | - gut verständlich | |
 | - von allen als Highlight gesehen | |
 | - hebt App von anderen ab| |
-|---------------------------------- | ----------------------------------|
+
+
 | neue Ideen? | neue Probleme? |
 |---------------------------------- | ----------------------------------|
 | - „Focus & Mood“ zu „Symptome“ ändern → als Tagebuchfunktion nutzen |
