@@ -11,6 +11,7 @@
 - Übersicht aller Zyklusphasen
 - Detailansicht pro Phase (Sport, Ernährung, Fokus)
 - Energie-Graph
+- Partner feature
 
 ## Version 3 (Erweitert)
 - Symptome anzeigen
