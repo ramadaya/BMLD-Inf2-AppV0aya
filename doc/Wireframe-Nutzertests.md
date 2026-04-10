@@ -25,7 +25,7 @@ Ein Erfolg ist es für uns, wenn die Testpersonen die Idee unserer App grundsät
 Ausserdem sehen wir es als Erfolg, wenn die Testpersonen uns konstruktive Verbesserungsvorschläge geben, da uns dieses Feedback dabei hilft, die App weiterzuentwickeln und besser auf die Bedürfnisse der Nutzerinnen und Nutzer abzustimmen.
 Ein Misserfolg wäre es hingegen, wenn die Testpersonen keinen Nutzen in der App sehen und der Meinung sind, dass sie eine solche Anwendung nicht benötigen oder nicht verwenden würden.
 
-# Protokoll
+## Protokoll:
 
 Der Test wurde anhand eines Papier-Wireframes durchgeführt. Ziel war es, die Benutzerführung, Verständlichkeit und Struktur der App bereits in einer frühen Entwicklungsphase zu überprüfen.
 Die Testpersonen starteten den Testprozess beim Login. Nach dem „Einloggen“ im Wireframe wurden sie zum Home Screen weitergeleitet, wo sie sich zunächst einen Überblick über den dargestellten Zyklus verschafften.
@@ -78,7 +78,7 @@ Beim Partner-Bereich hatten -wie bereits beim Home Screen – mehrere Testperson
 | - Infobox/Beschreibung bei Lifestyle-Phasen hinzufügen | - Viele ähnliche Apps existieren bereits zur Berechnung des nächsten Zyklus |
 
 
-# Bewertung
+## Bewertung:
 
 Der durchgeführte Usability-Test mit dem Papier-Wireframe hat gezeigt, dass die grundlegende Struktur und die Hauptfunktionen der App von den Testpersonen grösstenteils gut verstanden werden. Besonders positiv fiel auf, dass die Navigation in Bereichen wie dem Kalender sowie die Inhalte zu den Zyklusphasen als übersichtlich und nachvollziehbar wahrgenommen wurden.
 Auch die Unterteilung in die Bereiche Sport, Food und Focus & Mood wurde von den meisten Testpersonen als logisch und sinnvoll empfunden. Die dargestellten Inhalte, insbesondere die Infoboxen mit Grafiken sowie die Rezeptvorschläge, wurden als hilfreich und verständlich bewertet.
