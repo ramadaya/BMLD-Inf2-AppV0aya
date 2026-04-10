@@ -25,6 +25,19 @@ Ein Erfolg ist es für uns, wenn die Testpersonen die Idee unserer App grundsät
 Ausserdem sehen wir es als Erfolg, wenn die Testpersonen uns konstruktive Verbesserungsvorschläge geben, da uns dieses Feedback dabei hilft, die App weiterzuentwickeln und besser auf die Bedürfnisse der Nutzerinnen und Nutzer abzustimmen.
 Ein Misserfolg wäre es hingegen, wenn die Testpersonen keinen Nutzen in der App sehen und der Meinung sind, dass sie eine solche Anwendung nicht benötigen oder nicht verwenden würden.
 
+# Protokoll
+
+Der Test wurde anhand eines Papier-Wireframes durchgeführt. Ziel war es, die Benutzerführung, Verständlichkeit und Struktur der App bereits in einer frühen Entwicklungsphase zu überprüfen.
+Die Testpersonen starteten den Testprozess beim Login. Nach dem „Einloggen“ im Wireframe wurden sie zum Home Screen weitergeleitet, wo sie sich zunächst einen Überblick über den dargestellten Zyklus verschafften.
+Auf dem Home Screen hatten mehrere Testpersonen Schwierigkeiten, die Symbole im unteren Navigationsbereich eindeutig zu erkennen, insbesondere die Icons für „LifeStyle“ und „Partner“. Nach einer kurzen Erklärung durch die Testleitung konnten die Testpersonen jedoch weiter navigieren.
+Anschliessend wechselten die Testpersonen zum Kalender. Dieser wurde von allen als übersichtlich und gut verständlich wahrgenommen.
+Nach dem Auswählen des LifeStyle-Bereichs gelangten die Testpersonen zur Beschreibung der jeweiligen Zyklusphase. Diese Seite wurde als klar strukturiert und verständlich bewertet.
+Auf der darauffolgenden Seite konnten die Testpersonen zwischen den Bereichen Sport, Food sowie Focus & Mood wählen. Diese Auswahl wurde insgesamt als logisch aufgebaut und gut verständlich empfunden.
+Beim Auswählen des Bereichs Sport wurde eine Infobox mit einer Grafik angezeigt, die von den Testpersonen als hilfreich und verständlich bewertet wurde. Gleiches Feedback erhielten auch die Bereiche Food sowie die anschliessenden Rezeptvorschläge.
+Im Bereich Focus & Mood traten jedoch kleinere Verständnisschwierigkeiten auf. Einige Testpersonen waren unsicher, welche Funktion dieser Bereich genau erfüllt. Andere schlugen vor, diesen Bereich als eine Art Tagebuch zur Erfassung von Symptomen und Beschwerden zu gestalten.
+Beim Partner-Bereich hatten -wie bereits beim Home Screen – mehrere Testpersonen Schwierigkeiten, das Symbol zu erkennen. Nach dem Öffnen des Bereichs wurde der Inhalt jedoch als klar strukturiert und sinnvoll bewertet. Zudem wurde diese Funktion als hilfreiche Ergänzung zur App wahrgenommen.
+
+
 # Nutzertest
 
 | was war gut? | was war schlecht? |
@@ -63,3 +76,14 @@ Ein Misserfolg wäre es hingegen, wenn die Testpersonen keinen Nutzen in der App
 |---------------------------------- | ----------------------------------|
 | - „Focus & Mood“ zu „Symptome“ ändern → als Tagebuchfunktion nutzen |
 | - Infobox/Beschreibung bei Lifestyle-Phasen hinzufügen | - Viele ähnliche Apps existieren bereits zur Berechnung des nächsten Zyklus |
+
+
+# Bewertung
+
+Der durchgeführte Usability-Test mit dem Papier-Wireframe hat gezeigt, dass die grundlegende Struktur und die Hauptfunktionen der App von den Testpersonen grösstenteils gut verstanden werden. Besonders positiv fiel auf, dass die Navigation in Bereichen wie dem Kalender sowie die Inhalte zu den Zyklusphasen als übersichtlich und nachvollziehbar wahrgenommen wurden.
+Auch die Unterteilung in die Bereiche Sport, Food und Focus & Mood wurde von den meisten Testpersonen als logisch und sinnvoll empfunden. Die dargestellten Inhalte, insbesondere die Infoboxen mit Grafiken sowie die Rezeptvorschläge, wurden als hilfreich und verständlich bewertet.
+Verbesserungspotenzial zeigte sich vor allem bei den Icons im unteren Navigationsbereich. Mehrere Testpersonen hatten Schwierigkeiten, die Symbole für „LifeStyle“ und „Partner“ ohne zusätzliche Erklärung zu erkennen. Dies deutet darauf hin, dass die Icons nicht selbsterklärend genug sind und überarbeitet oder mit Beschriftungen ergänzt werden sollten.
+Ein weiterer kritischer Punkt war der Bereich Focus & Mood. Hier war die Funktion für einige Testpersonen unklar. Gleichzeitig zeigte das Feedback, dass in diesem Bereich Potenzial besteht, beispielsweise durch die Integration einer Tagebuchfunktion zur Erfassung von Symptomen und Beschwerden.
+Der Partner-Bereich wurde inhaltlich positiv bewertet, jedoch gab es auch hier anfängliche Schwierigkeiten bei der Erkennung des Symbols. Nach dem Öffnen wurde die Funktion jedoch als sinnvoll und unterstützend wahrgenommen.
+Insgesamt zeigt der Test, dass das Konzept der App gut ankommt und viele Funktionen bereits verständlich umgesetzt sind. Die wichtigsten Optimierungspunkte liegen in der Verbesserung der Benutzerführung durch klarere Icons sowie in der genaueren Ausarbeitung einzelner Funktionen.
+
