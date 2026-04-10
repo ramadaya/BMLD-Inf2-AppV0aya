@@ -29,36 +29,44 @@ Ein Misserfolg wäre es hingegen, wenn die Testpersonen keinen Nutzen in der App
 
 | was war gut? | was war schlecht? |
 |---------------------------------- |----------------------------------|
-| Startseite | Homebildschirm |
-| - gut verständlich | - Symbole unten nicht klar verständlich |
-| - Pflichtfelder sofort erkannt | Life Sytle |
-|Homebildschirm | - Logo sehr undeutlich | 
-| - Navigation grundsätzlich verständlich | - Infbox/Beschreibung für Zyklusphasen fehlt |
-| - Zyklus klar dargestellt | Modus |
-| Kalender | - weniger Begeisterung --> Empfehlung: Tagebuchfunktion (Notizen für Symptome & Protokoll) |
-| - Übersichtlich | |
-| - einfache Bedienung | |
-| - Vorgehen intuitiv klar | |
-| LifeStyle | |
-| - Inhalte sinnvoll aufgebaut | |
-| - Idee der Phasenauswahl positiv | |
-| - Auswahl (Sport, Food, Fokus, Mood) verständlich | |
-| Sport | |
-| - Grafik ansprechend und klar | |
-| - Infobox verständlich | |
-| Foods | |
-| - Texte gut verständlich | |
-| - Cook Book finden alle eine gute Idee | |
-| - Rezepte sinnvoll und verständlich | |
-| Moods | |
-| - klar verständlich | |
-| - einfache Nutzung | |
-|Partner | |
-| - gut verständlich | |
-| - von allen als Highlight gesehen | |
-| - hebt App von anderen ab| |
+| Startseite
+o	gut verständlich 
+o	Pflichtfelder sofort erkannt
+Homebildschirm
+o	Navigation grundsätzlich verständlich
+o	Zyklus klar dargestellt
+Kalender
+o	Übersichtlich 
+o	einfache Bedienung
+o	Vorgehen intuitiv klar
+LifeStyle
+o	Inhalte sinnvoll aufgebaut
+o	Idee der Phasenauswahl positiv
+o	Auswahl (Sport, Food, Fokus, Mood) verständlich
+Sport
+o	Grafik ansprechend und klar 
+o	Infobox verständlich
+Foods
+o	Texte gut verständlich
+o	Cook Book finden alle eine gute Idee
+o	Rezepte sinnvoll und verständlich
+Moods
+o	klar verständlich
+o	einfache Nutzung
+Partner
+o	gut verständlich
+o	von allen als Highlight gesehen
+o	hebt App von anderen ab | •	Homebildschirm
+o	Symbole unten nicht klar verständlich 
+LifeStyle
+o	Logo sehr undeutlich
+o	Infobox/Beschreibung für Zyklusphasen fehlt
+Moods
+o	weniger Begeisterung
+Empfehlung: Tagebuchfunktion (Notizen für Symptome & Überwachung) |
 |---------------------------------- | ----------------------------------|
 | neue Ideen? | neue Probleme? |
 |---------------------------------- | ----------------------------------|
-| - „Focus & Mood“ zu „Symptome“ ändern → als Tagebuchfunktion nutzen |
-| - Infobox/Beschreibung bei Lifestyle-Phasen hinzufügen | - Viele ähnliche Apps existieren bereits zur Berechnung des nächsten Zyklus |
+| •	Neue Logos erstellen + Beschriftung hinzufügen
+•	„Focus & Mood“ zu „Symptome“ ändern → als Tagebuchfunktion nutzen
+•	Infobox/Beschreibung bei Lifestyle-Phasen hinzufügen | •	Viele ähnliche Apps existieren bereits zur Berechnung des nächsten Zyklus |
