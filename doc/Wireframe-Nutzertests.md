@@ -41,6 +41,7 @@ Beim Partner-Bereich hatten -wie bereits beim Home Screen – mehrere Testperson
 # Nutzertest
 
 | **was war gut?** | **was war schlecht?** |
+|------------------------| ------------------------|
 | Startseite <br> - gut verständlich <br> - Pflichtfelder sofort erkannt <br> Homebildschirm <br> - Navigation grundsätzlich verständlich <br> - Zyklus klar dargestellt <br> - Übersichtlich <br> - einfache Bedienung <br> - Vorgehen intuitiv klar <br> Lifestyle <br> - Inhalte sinnvoll aufgebaut <br> - Idee der Phasenauswahl positiv <br> - Auswahl (Sport, Food, Fokus, Mood) verständlich <br> Sport <br> - Grafik ansprechend und klar <br> - Infobox verständlich <br> Foods <br> - Texte gut verständlich <br> - Cook Book finden alle eine gute Idee <br> - Rezepte sinnvoll und verständlich <br> Moods <br> - klar verständlich <br> - einfache Nutzung <br> Partner <br> - gut verständlich <br> - von allen als Highlight gesehen <br> - hebt App von anderen ab | Homebildschirm <br> - Symbole unten nicht klar verständlich <br> LifeStyle <br> - Logo sehr undeutlich <br> - Infobox/Beschreibung für Zyklusphasen fehlt <br> Moods <br> - weniger Begeisterung <br> - Empfehlung: Tagebuchfunktion (Notizen für Symptome & Überwachung) |
 | **neue Ideen?** | **neue Probleme?** |
 | - „Focus & Mood“ zu „Symptome“ ändern → als Tagebuchfunktion nutzen <br> - Infobox/Beschreibung bei Lifestyle-Phasen hinzufügen | - Viele ähnliche Apps existieren bereits zur Berechnung des nächsten Zyklus |
