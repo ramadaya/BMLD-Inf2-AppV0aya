@@ -38,7 +38,7 @@ Im Bereich Focus & Mood traten jedoch kleinere Verständnisschwierigkeiten auf. 
 Beim Partner-Bereich hatten -wie bereits beim Home Screen – mehrere Testpersonen Schwierigkeiten, das Symbol zu erkennen. Nach dem Öffnen des Bereichs wurde der Inhalt jedoch als klar strukturiert und sinnvoll bewertet. Zudem wurde diese Funktion als hilfreiche Ergänzung zur App wahrgenommen.
 
 
-# Nutzertest
+## Nutzertest
 
 | **was war gut?** | **was war schlecht?** |
 |:------------------------| :------------------------|
