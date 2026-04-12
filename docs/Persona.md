@@ -14,5 +14,5 @@ Ein weiteres Problem ist, dass Ellie oft nicht weiss, wie sie ihren Alltag an ih
 Ellie hat schon versucht, ihre Periode im Kalender aufzuschreiben, vergisst es aber oft oder verliert den Überblick. Deshalb wünscht sie sich eine einfache und übersichtliche App, die ihr nicht nur beim Tracken ihres Zyklus hilft, sondern ihr auch erklärt, in welcher Phase sie sich befindet, und ihr passende Empfehlungen zu Sport und Ernährung gibt. So könnte sie ihren Körper besser verstehen und ihren Alltag gesünder und entspannter gestalten.
 Ellie möchte ihren Körper besser verstehen und sich im Alltag sicherer fühlen. Momentan ist sie oft unsicher und fühlt sich von den Veränderungen ihres Körpers überfordert, da sie nicht weiss, wie sie richtig darauf reagieren soll.
 
-![Persona Bild](https://github.com/ramadaya/BMLD-Inf2-AppV0aya/blob/main/doc/Persona%20bild/persona%20.png)
+![Persona Bild](https://github.com/ramadaya/BMLD-Inf2-AppV0aya/blob/main/docs/Persona%20bild/persona%20.png)
 
