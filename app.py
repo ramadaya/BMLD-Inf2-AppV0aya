@@ -24,10 +24,10 @@ if 'data_df' not in st.session_state:
     )
 # --- END OF CODE UPDATE ---
 pg_home = st.Page("views/1_home.py", title="Home", icon=":material/home:", default=True)
-pg_second = st.Page("views/2_Kalender.py", title="Kalender", icon=":material/calendar:")
-pg_third = st.Page("views/3_Sport.py", title="Sport", icon=":material/athletic_shoe:")
-pg_fourth = st.Page("views/4_Ernährung.py", title="Ernährung", icon=":material/strawberry:")
-pg_fifth = st.Page("views/5_Symptome.py", title="Symptome", icon=":material/crying_cat_face:")
+pg_second = st.Page("views/2_Kalender.py", title="Kalender", icon=":calendar:")
+pg_third = st.Page("views/3_Sport.py", title="Sport", icon=":athletic_shoe:")
+pg_fourth = st.Page("views/4_Ernährung.py", title="Ernährung", icon=":strawberry:")
+pg_fifth = st.Page("views/5_Symptome.py", title="Symptome", icon=":crying_cat_face:")
 pg_sixth = st.Page("views/6_Unterseite_e.py", title="Unterseite E", icon=":material/info:")
 
 
