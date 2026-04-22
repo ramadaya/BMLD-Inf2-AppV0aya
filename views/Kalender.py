@@ -1,5 +1,5 @@
 
-st.title("Kalenderblatt 📅")
+st.title("Kalender")
 
 import streamlit as st
 from datetime import date, timedelta
@@ -7,7 +7,7 @@ from streamlit_calendar import calendar
 import pandas as pd
 import os
 
-st.title("Kalenderblatt 📅")
+st.title("Kalender")
 
 FILE = "events.csv"
 
