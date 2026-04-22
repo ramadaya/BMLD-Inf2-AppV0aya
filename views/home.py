@@ -7,7 +7,7 @@ if "user" in st.session_state:
     st.write(f"Hallo {st.session_state['user']} 👋")
 
 # Zyklustag
-zyklustag = st.number_input("Welcher Zyklustag bist du?", 1, 28)
+zyklustag = st.number_input("An welchem Zyklustag bist du heute?", 1, 28)
 
 # Phase bestimmen
 if zyklustag <= 5:
