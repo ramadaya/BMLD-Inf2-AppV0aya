@@ -4,6 +4,21 @@ st.title("Kalenderblatt 📅")
 
 st.write("Diese Seite ist eine Unterseite der Startseite.")
 
+from streamlit_calendar import calendar
+
+events = [
+    {"title": "Event A", "start": "2026-04-22"},
+    {"title": "Event A (Follow-Up)", "start": "2026-04-29"},
+]
+
+calendar_options = {
+    "initialView": "dayGridMonth",  # Monatsansicht
+}
+
+st.title("Kalender")
+
+calendar(events=events, options=calendar_options)
+
 from datetime import datetime, timedelta
 import pandas as pd
 
