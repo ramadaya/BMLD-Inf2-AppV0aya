@@ -7,8 +7,6 @@ from streamlit_calendar import calendar
 import pandas as pd
 import os
 
-st.title("Kalender")
-
 FILE = "events.csv"
 
 # Daten laden
