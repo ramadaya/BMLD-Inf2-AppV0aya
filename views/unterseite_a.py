@@ -1,3 +1,5 @@
+from datetime import timedelta
+
 import streamlit as st
 
 st.title("Kalenderblatt 📅")
@@ -6,14 +8,14 @@ events = []
 
 for e in stored_events:
     events.append({
-        "title": e["name"],
-        "start": str(e["date"])
+        "title": e["Periode"],
+        "start": str(e["Datum"])
     })
 
-    follow_date = e["date"] + timedelta(days=e["follow_days"])
+    follow_date = e["Datum"] + timedelta(days=e["follow_days"])
 
     events.append({
-        "title": e["name"] + " (Follow-Up)",
+        "title": e["Periode"] + " (Ovulation)",
         "start": str(follow_date),
         "color": "red"
     })
