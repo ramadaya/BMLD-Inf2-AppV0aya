@@ -3,12 +3,19 @@ st.title("Kalenderblatt 📅")
 import streamlit as st
 from datetime import date, timedelta
 from streamlit_calendar import calendar
+import pandas as pd
+import os
 
 st.title("Kalenderblatt 📅")
 
-# Speicher initialisieren
-if "stored_events" not in st.session_state:
-    st.session_state.stored_events = []
+FILE = "events.csv"
+
+# 📥 Daten laden
+if os.path.exists(FILE):
+    df = pd.read_csv(FILE)
+    df["Datum"] = pd.to_datetime(df["Datum"]).dt.date
+else:
+    df = pd.DataFrame(columns=["Periode", "Datum", "follow_days"])
 
 # ➕ Event hinzufügen
 with st.form("event_form"):
@@ -19,16 +26,20 @@ with st.form("event_form"):
     submitted = st.form_submit_button("Speichern")
 
     if submitted:
-        st.session_state.stored_events.append({
+        new_row = pd.DataFrame([{
             "Periode": name,
             "Datum": event_date,
             "follow_days": follow_days
-        })
+        }])
+
+        df = pd.concat([df, new_row], ignore_index=True)
+        df.to_csv(FILE, index=False)
+        st.success("Gespeichert!")
 
 # 📅 Events für Kalender vorbereiten
 events = []
 
-for e in st.session_state.stored_events:
+for _, e in df.iterrows():
     # normales Event
     events.append({
         "title": e["Periode"],
@@ -36,8 +47,8 @@ for e in st.session_state.stored_events:
         "color": "blue"
     })
 
-    # Follow-Up berechnen
-    follow_date = e["Datum"] + timedelta(days=e["follow_days"])
+    # Follow-Up
+    follow_date = e["Datum"] + timedelta(days=int(e["follow_days"]))
 
     events.append({
         "title": e["Periode"] + " (Follow-Up)",
@@ -52,3 +63,7 @@ calendar_options = {
 }
 
 calendar(events=events, options=calendar_options)
+
+# 📋 Tabelle anzeigen (optional)
+st.subheader("Gespeicherte Events")
+st.dataframe(df)
