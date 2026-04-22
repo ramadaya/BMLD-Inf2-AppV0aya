@@ -10,14 +10,14 @@ st.title("Kalenderblatt 📅")
 
 FILE = "events.csv"
 
-# 📥 Daten laden
+# Daten laden
 if os.path.exists(FILE):
     df = pd.read_csv(FILE)
     df["Datum"] = pd.to_datetime(df["Datum"]).dt.date
 else:
     df = pd.DataFrame(columns=["Periode", "Datum", "follow_days"])
 
-# ➕ Event hinzufügen
+# Event hinzufügen
 with st.form("event_form"):
     name = st.text_input("Name / Periode")
     event_date = st.date_input("Datum")
@@ -36,7 +36,7 @@ with st.form("event_form"):
         df.to_csv(FILE, index=False)
         st.success("Gespeichert!")
 
-# 📅 Events für Kalender vorbereiten
+# Events für Kalender vorbereiten
 events = []
 
 for _, e in df.iterrows():
@@ -56,7 +56,7 @@ for _, e in df.iterrows():
         "color": "red"
     })
 
-# 📆 Kalender anzeigen
+# Kalender anzeigen
 calendar_options = {
     "initialView": "dayGridMonth",
     "locale": "de"
@@ -64,6 +64,6 @@ calendar_options = {
 
 calendar(events=events, options=calendar_options)
 
-# 📋 Tabelle anzeigen (optional)
+# Tabelle anzeigen (evtl. später löschen)
 st.subheader("Gespeicherte Events")
 st.dataframe(df)
