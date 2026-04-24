@@ -14,10 +14,17 @@ if phase is None:
 else:
     info = PHASE_INFO[phase]
     st.markdown(f"## Ernährungstipps für die {info['name']}")
+    
+    items = "".join(f"<li> {tip}</li>" for tip in info["nutrition"])
+    
     st.markdown(
-        f"<div style='background-color:{info['color']}22; border-left: 5px solid {info['color']}; padding: 1rem; border-radius: 8px;'>",
-        unsafe_allow_html=True
-    )
-    for food in info["nutrition"]:
-        st.markdown(f"- {food}")
-    st.markdown("</div>", unsafe_allow_html=True)
+    f"""
+    <div style="background-color:{info['color']}22; 
+                border-left: 5px solid {info['color']}; 
+                padding: 1rem; 
+                border-radius: 8px;">
+        <ul>{items}</ul>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
