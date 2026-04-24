@@ -38,7 +38,7 @@ def calculate_cycle_phases(period_start: date, cycle_length: int = 28, period_le
     ovulation_day = period_start + timedelta(days=cycle_length - 14)  # LH surge offset
     for i in range(3):
         events.append({
-            "title": "✨ Eisprung",
+            "title": "🐣 Eisprung",
             "start": str(ovulation_day + timedelta(days=i)),
             "color": "#2a9d8f"
         })

@@ -27,7 +27,7 @@ pg_home = st.Page("views/1_home.py", title="Home", icon=":material/home:", defau
 pg_second = st.Page("views/2_Kalender.py", title="📆 Kalender")
 pg_third = st.Page("views/3_Sport.py", title="👟 Sport")
 pg_fourth = st.Page("views/4_Ernährung.py", title="🍓 Ernährung")
-pg_fifth = st.Page("views/5_Symptome.py", title="😿 Symptome")
+pg_fifth = st.Page("views/5_Symptome.py", title="🩺 Symptome")
 pg_sixth = st.Page("views/6_Unterseite_e.py", title="Unterseite E")
 
 

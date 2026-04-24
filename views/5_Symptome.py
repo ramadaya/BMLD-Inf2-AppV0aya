@@ -10,7 +10,7 @@ st.title("🩺 Symptome")
 phase = get_current_phase()
 
 if phase is None:
-    st.info("Noch keine Periode eingetragen. Gehe zum 📅 Kalender!")
+    st.info("Noch keine Periode eingetragen. Gehe zum Kalender!")
 else:
     info = PHASE_INFO[phase]
     st.markdown(f"## Typische Symptome in der {info['name']}")
@@ -19,5 +19,5 @@ else:
         unsafe_allow_html=True
     )
     for symptom in info["symptoms"]:
-        st.markdown(f"- 🔍 {symptom}")
+        st.markdown(f"- {symptom}")
     st.markdown("</div>", unsafe_allow_html=True)

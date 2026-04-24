@@ -14,7 +14,7 @@ if "user" in st.session_state:
 phase = get_current_phase()
 
 if phase is None:
-    st.info("Noch keine Periode eingetragen. Gehe zum 📅 Kalender und trage deinen Zyklus ein!")
+    st.info("Noch keine Periode eingetragen. Gehe zum Kalender und trage deinen Zyklus ein!")
 else:
     info = PHASE_INFO[phase]
     st.markdown(f"## Du bist gerade in der {info['name']}")
