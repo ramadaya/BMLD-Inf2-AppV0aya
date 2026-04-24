@@ -13,8 +13,8 @@ if phase is None:
     st.info("Noch keine Periode eingetragen. Gehe zum Kalender!")
 else:
     info = PHASE_INFO[phase]
-    st.markdown(f"## Typische Symptome in der {info['name']}")
-    
+    st.markdown(f"## Empfehlungen für die {info['name']}")
+
     items = "".join(f"<li> {symptom}</li>" for symptom in info["symptoms"])
 
     st.markdown(

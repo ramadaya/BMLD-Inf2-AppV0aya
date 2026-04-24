@@ -13,10 +13,10 @@ if phase is None:
     st.info("Noch keine Periode eingetragen. Gehe zum Kalender!")
 else:
     info = PHASE_INFO[phase]
-    st.markdown(f"## Ernährungstipps für die {info['name']}")
-    
+    st.markdown(f"## Empfehlungen für die {info['name']}")
+
     items = "".join(f"<li> {tip}</li>" for tip in info["nutrition"])
-    
+
     st.markdown(
     f"""
     <div style="background-color:{info['color']}22; 
