@@ -4,7 +4,7 @@ from streamlit_calendar import calendar
 import pandas as pd
 import os
 
-st.title("🌸 Zyklus-Kalender")
+st.title("Zyklus-Kalender 🌸")
 
 FILE = "events.csv"
 

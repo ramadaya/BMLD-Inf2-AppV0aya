@@ -1,4 +1,5 @@
 import streamlit as st
+from cycle_utils import get_current_phase, PHASE_INFO
 
 st.title("Berry Cycle 🍓")
 
@@ -6,33 +7,18 @@ st.title("Berry Cycle 🍓")
 if "user" in st.session_state:
     st.write(f"Hallo {st.session_state['user']} 👋")
 
-# Zyklustag
-zyklustag = st.number_input("An welchem Zyklustag bist du heute?", 1, 28)
+phase = get_current_phase()
 
-# Phase bestimmen
-if zyklustag <= 5:
-    phase = "Menstruation"
-    info = "Dein Körper braucht Ruhe 🧘‍♀️"
-elif zyklustag <= 13:
-    phase = "Follikelphase"
-    info = "Du hast mehr Energie 💪"
-elif zyklustag == 14:
-    phase = "Ovulation"
-    info = "Du bist besonders aktiv ⚡"
+if phase is None:
+    st.info("Noch keine Periode eingetragen. Gehe zum 📅 Kalender und trage deinen Zyklus ein!")
 else:
-    phase = "Lutealphase"
-    info = "Nimm dir Zeit für dich 💆‍♀️"
-
-# Anzeigen
-st.success(f"Aktuelle Phase: {phase}")
-st.info(info)
-
-
-
-
-
-
-
+    info = PHASE_INFO[phase]
+    st.markdown(f"## Du bist gerade in der {info['name']}")
+    st.markdown(
+        f"<div style='background-color:{info['color']}22; border-left: 5px solid {info['color']}; padding: 1rem; border-radius: 8px;'>"
+        f"<b>💬 Mood:</b> {info['mood']}</div>",
+        unsafe_allow_html=True
+    )
 
 # !! WICHTIG: Eure Emails müssen in der App erscheinen!!
 
