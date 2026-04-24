@@ -15,11 +15,16 @@ else:
     info = PHASE_INFO[phase]
     st.markdown(f"## Empfehlungen für die {info['name']}")
 
-    items = "".join(f"<li>{activity}</li>" for activity in info["sports"])
+    items = "".join(f"<li> {activity}</li>" for activity in info["sports"])
 
     st.markdown(
-        f"<div style='background-color:{info['color']}22; border-left: 5px solid {info['color']}; padding: 1rem; border-radius: 8px;'>",
+        f"""
+        <div style='background-color:{info['color']}22; 
+                    border-left: 5px solid {info['color']}; 
+                    padding: 1rem; 
+                    border-radius: 8px;'>
+            <ul>{items}</ul>
+        </div>
+        """,
         unsafe_allow_html=True
     )
-    st.markdown(f"<ul>{items}</ul>", unsafe_allow_html=True)
-    st.markdown("</div>", unsafe_allow_html=True)
