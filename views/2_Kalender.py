@@ -3,6 +3,7 @@ from datetime import date, timedelta
 from streamlit_calendar import calendar
 import pandas as pd
 import os
+pip install streamlit-calendar
 
 st.title("Kalender")
 
