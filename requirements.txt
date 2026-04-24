@@ -1,4 +1,5 @@
 streamlit
+streamlit-calendar
 streamlit-authenticator
 pandas
 pyyaml
