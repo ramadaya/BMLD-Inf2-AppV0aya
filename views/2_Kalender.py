@@ -88,13 +88,14 @@ with st.form("period_form"):
 # --- Build calendar events ---
 all_events = []
 
-for _, row in df.iterrows():
-    phase_events, _ = calculate_cycle_phases(
-        period_start=row["Datum"],
-        cycle_length=int(row["Zykluslänge"]),
-        period_length=int(row["Periodendauer"])
-    )
-    all_events.extend(phase_events)
+# Only use the last entry for the calendar
+last_row = df.iloc[-1]
+phase_events, _ = calculate_cycle_phases(
+    period_start=last_row["Datum"],
+    cycle_length=int(last_row["Zykluslänge"]),
+    period_length=int(last_row["Periodendauer"])
+)
+all_events = phase_events
 
 
 # --- Display calendar ---
