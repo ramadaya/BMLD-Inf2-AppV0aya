@@ -13,8 +13,12 @@ RECIPES_FILE = "recipes.csv"
 # --- Load saved recipes ---
 if os.path.exists(RECIPES_FILE):
     recipes_df = pd.read_csv(RECIPES_FILE)
+    # Make sure all expected columns exist
+    for col in ["Phase", "Rezeptname", "Zutaten", "Zubereitung", "Datum"]:
+        if col not in recipes_df.columns:
+            recipes_df[col] = ""
 else:
-    recipes_df = pd.DataFrame(columns=["Name", "Zutaten", "Anleitung"])
+    recipes_df = pd.DataFrame(columns=["Phase", "Rezeptname", "Zutaten", "Zubereitung", "Datum"])
 
 phase = get_current_phase()
 
