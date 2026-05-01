@@ -36,7 +36,7 @@ else:
     st.markdown(f"## Typische Symptome in der {info['name']}")
 
     # --- Phase info box ---
-    items = "".join(f"<li>🔍 {symptom}</li>" for symptom in info["symptoms"])
+    items = "".join(f"<li> {symptom}</li>" for symptom in info["symptoms"])
     st.markdown(
         f"""
         <div style="background-color:{info['color']}22; 

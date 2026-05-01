@@ -4,6 +4,7 @@ from turtle import pd
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import streamlit as st
+import pandas as pd
 from cycle_utils import get_current_phase, PHASE_INFO
 
 st.title("🍓 Ernährung")
