@@ -8,3 +8,4 @@ fsspec
 matplotlib
 numpy
 pytz
+plotly
