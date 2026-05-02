@@ -28,7 +28,7 @@ pg_second = st.Page("views/2_Kalender.py", title="📆 Kalender")
 pg_third = st.Page("views/3_Sport.py", title="👟 Sport")
 pg_fourth = st.Page("views/4_Ernährung.py", title="🍓 Ernährung")
 pg_fifth = st.Page("views/5_Symptome.py", title="🩺 Symptome")
-pg_sixth = st.Page("views/6_Unterseite_e.py", title="Unterseite E")
+pg_sixth = st.Page("views/6_Boyfriend.py", title="❤️ Boyfriend")
 
 
 pg = st.navigation([pg_home, pg_second, pg_third, pg_fourth, pg_fifth, pg_sixth])
