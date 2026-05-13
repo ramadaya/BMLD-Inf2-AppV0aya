@@ -58,12 +58,17 @@ def calculate_cycle_phases(period_start: date, cycle_length: int = 28, period_le
 
 # --- Load saved data ---
 ####Ka Men######
-df = st.session_state.data_df
+df = st.session_state["data_df"]
 
-if len(df) !=0 :
-    df["Datum"] = pd.to_datetime(df["Datum"]).dt.date
+if not df.empty and "Typ" in df.columns:
+    df = df[df["Typ"] == "Kalender"].copy()
 else:
-    df = pd.DataFrame(columns=["Datum", "Zykluslänge", "Periodendauer"])
+    df = pd.DataFrame(columns=["Typ", "Datum", "Zykluslänge", "Periodendauer"])
+
+df = df.dropna(subset=["Datum", "Zykluslänge", "Periodendauer"])
+
+if not df.empty:
+    df["Datum"] = pd.to_datetime(df["Datum"]).dt.date
 ################################
 
 # --- Input form ---

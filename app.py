@@ -17,12 +17,16 @@ login_manager.login_register()             # stops if not logged in
 # --- END OF NEW CODE ---
 
 # --- CODE UPDATE: load user data from data manager if not already present in session state --
-if 'data_df' not in st.session_state:
-    st.session_state['data_df'] = data_manager.load_user_data(
-        'data.csv',                     # The file on switch drive where the data is stored
-        initial_value=pd.DataFrame()   # Initial value if the file does not exist
-        #parse_dates=['timestamp']       # Parse timestamp as datetime
+
+
+current_user = st.session_state.get("username")
+
+if st.session_state.get("loaded_user") != current_user:
+    st.session_state["data_df"] = data_manager.load_user_data(
+        "data.csv",
+        initial_value=pd.DataFrame()
     )
+    st.session_state["loaded_user"] = current_user
 # --- END OF CODE UPDATE ---
 pg_home = st.Page("views/1_home.py", title="Home", icon=":material/home:", default=True)
 pg_second = st.Page("views/2_Kalender.py", title="📆 Kalender")
