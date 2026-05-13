@@ -73,15 +73,16 @@ else:
             st.rerun()
 
     # Frühere Notizen anzeigen
+    # Frühere Notizen anzeigen
     data_df = st.session_state["data_df"]
 
-if not data_df.empty and "Typ" in data_df.columns and "Phase" in data_df.columns:
-    phase_notes = data_df[
-        (data_df["Typ"] == "Sport-Notiz") &
-        (data_df["Phase"] == info["name"])
-    ]
-else:
-    phase_notes = pd.DataFrame()
+    if not data_df.empty and "Typ" in data_df.columns and "Phase" in data_df.columns:
+        phase_notes = data_df[
+            (data_df["Typ"] == "Sport-Notiz") &
+            (data_df["Phase"] == info["name"])
+        ]
+    else:
+        phase_notes = pd.DataFrame()
 
     if not phase_notes.empty:
         st.markdown(f"#### Frühere Notizen in der {info['name']}:")
