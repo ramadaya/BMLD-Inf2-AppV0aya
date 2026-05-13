@@ -9,6 +9,24 @@ from functions.cycle_utils import get_current_phase, PHASE_INFO
 
 st.title("Berry Cycle 🍓")
 
+
+
+# Navigation Buttons
+st.markdown("### 🔗 Schnellzugriff")
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+    st.page_link("views/2_Kalender.py", label="📅 Kalender")
+    st.page_link("views/3_Sport.py", label="👟 Sport")
+
+with col2:
+    st.page_link("views/4_Ernährung.py", label="🍓 Ernährung")
+    st.page_link("views/5_Symptome.py", label="🩺 Symptome")
+
+with col3:
+    st.page_link("views/6_Boyfriend.py", label="❤️ Boyfriend")
+
 SYMPTOMS_FILE = "symptoms.csv"
 EVENTS_FILE = "events.csv"
 

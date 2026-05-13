@@ -1,20 +1,27 @@
 import pandas as pd
 from datetime import date, timedelta
-import os
-
-FILE = "events.csv"
+import streamlit as st 
 
 def get_current_phase() -> str:
-    """Reads events.csv and returns the current cycle phase as a string."""
-    if not os.path.exists(FILE):
+    """Liest Kalenderdaten aus st.session_state['data_df'] und gibt die aktuelle Zyklusphase zurück."""
+
+    if "data_df" not in st.session_state:
         return None
 
-    df = pd.read_csv(FILE)
-    if df.empty:
+    df = st.session_state["data_df"]
+
+    if df.empty or "Typ" not in df.columns:
         return None
 
-    df["Datum"] = pd.to_datetime(df["Datum"]).dt.date
-    last = df.iloc[-1]
+    calendar_df = df[df["Typ"] == "Kalender"]
+
+    if calendar_df.empty:
+        return None
+
+    calendar_df = calendar_df.copy()
+    calendar_df["Datum"] = pd.to_datetime(calendar_df["Datum"]).dt.date
+
+    last = calendar_df.iloc[-1]
 
     period_start = last["Datum"]
     cycle_length = int(last["Zykluslänge"])
@@ -33,7 +40,6 @@ def get_current_phase() -> str:
         return "eisprung"
     else:
         return "luteal"
-
 
 PHASE_INFO = {
     "menstruation": {
