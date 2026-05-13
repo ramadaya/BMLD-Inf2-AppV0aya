@@ -3,10 +3,10 @@ from datetime import date, timedelta
 from streamlit_calendar import calendar
 import pandas as pd
 import os
+from utils.data_manager import DataManager
 
 st.title("Zyklus-Kalender 🌸")
 
-FILE = "events.csv"
 
 # --- Cycle phase calculation ---
 def calculate_cycle_phases(period_start: date, cycle_length: int = 28, period_length: int = 5):
@@ -26,7 +26,7 @@ def calculate_cycle_phases(period_start: date, cycle_length: int = 28, period_le
 
     # Phase 2: Follicular phase (after period until ovulation)
     follicular_start = period_start + timedelta(days=period_length)
-    follicular_end = period_start + timedelta(days=12)  # ~Day 6–12
+    follicular_end = period_start + timedelta(days=13)  # ~Day 6–12
     for i in range((follicular_end - follicular_start).days + 1):
         events.append({
             "title": "🌱 Follikelphase",
@@ -56,14 +56,15 @@ def calculate_cycle_phases(period_start: date, cycle_length: int = 28, period_le
 
     return events, next_period
 
-
 # --- Load saved data ---
-if os.path.exists(FILE):
-    df = pd.read_csv(FILE)
+####Ka Men######
+df = st.session_state.data_df
+
+if len(df) !=0 :
     df["Datum"] = pd.to_datetime(df["Datum"]).dt.date
 else:
     df = pd.DataFrame(columns=["Datum", "Zykluslänge", "Periodendauer"])
-
+################################
 
 # --- Input form ---
 with st.form("period_form"):
@@ -74,23 +75,31 @@ with st.form("period_form"):
 
     submitted = st.form_submit_button("Speichern & Berechnen")
 
+    ## Ka Men##
+    data_manager = DataManager()
+    ##########
     if submitted:
         new_row = pd.DataFrame([{
             "Datum": period_start,
             "Zykluslänge": cycle_length,
             "Periodendauer": period_length
         }])
-        df = pd.concat([df, new_row], ignore_index=True)
-        df.to_csv(FILE, index=False)
-        st.success("✅ Gespeichert!")
 
+    #####Ka Men######
+        st.session_state['data_df'] = pd.concat([st.session_state['data_df'], new_row])
+        #df = pd.concat([df, new_row], ignore_index=True)
+        data_manager.save_user_data(st.session_state["data_df"],"data.csv" )
+        #df.to_csv(FILE, index=False)
+    ###########
+        st.success("✅ Gespeichert!")
+        st.rerun()
+all_events = []
 
 # --- Build calendar events ---
 if df.empty:
     st.warning("⚠️ Bitte trage deine Periode ein, um den Kalender anzuzeigen.")
 
 else:
-    all_events = []
 
     # Only use the last entry for the calendar
     last_row = df.iloc[-1]

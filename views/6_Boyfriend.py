@@ -3,7 +3,7 @@ from datetime import date, timedelta
 from streamlit_calendar import calendar
 import pandas as pd
 import os
-from cycle_utils import get_current_phase, PHASE_INFO
+from functions.cycle_utils import get_current_phase, PHASE_INFO
 
 # --- Cycle phase calculation ---
 def calculate_cycle_phases(period_start: date, cycle_length: int = 28, period_length: int = 5):

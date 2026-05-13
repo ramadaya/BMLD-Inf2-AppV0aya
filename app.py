@@ -19,8 +19,8 @@ login_manager.login_register()             # stops if not logged in
 if 'data_df' not in st.session_state:
     st.session_state['data_df'] = data_manager.load_user_data(
         'data.csv',                     # The file on switch drive where the data is stored
-        initial_value=pd.DataFrame(),   # Initial value if the file does not exist
-        parse_dates=['timestamp']       # Parse timestamp as datetime
+        initial_value=pd.DataFrame()   # Initial value if the file does not exist
+        #parse_dates=['timestamp']       # Parse timestamp as datetime
     )
 # --- END OF CODE UPDATE ---
 pg_home = st.Page("views/1_home.py", title="Home", icon=":material/home:", default=True)
