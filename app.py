@@ -10,7 +10,8 @@ st.set_page_config(page_title="Meine App", page_icon=":material/home:")
 data_manager = DataManager(       # initialize data manager
     fs_protocol='webdav',         # protocol for the filesystem, use webdav for switch drive
     fs_root_folder="Berry_Cycle"  # folder on switch drive where the data is stored
-    ) 
+    )
+st.session_state["data_manager"] = data_manager 
 login_manager = LoginManager(data_manager) # handles user login and registration
 login_manager.login_register()             # stops if not logged in
 # --- END OF NEW CODE ---

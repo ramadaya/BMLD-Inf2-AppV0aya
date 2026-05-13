@@ -188,12 +188,30 @@ else:
                 "Phase": info["name"],
                 "Notiz": note_text
             }])
-            notes_df = pd.concat([notes_df, new_note], ignore_index=True)
-            notes_df.to_csv(NOTES_FILE, index=False)
-            st.success("✅ Notiz gespeichert!")
+            st.session_state["data_df"] = pd.concat(
+    [st.session_state["data_df"], new_note],
+    ignore_index=True
+)
+
+st.session_state["data_manager"].save_user_data(
+    st.session_state["data_df"],
+    "data.csv"
+)
+
+st.success("✅ Notiz gespeichert!")
+st.rerun()
+
 
     # --- Show past notes for current phase ---
-    phase_notes = notes_df[notes_df["Phase"] == info["name"]]
+data_df = st.session_state["data_df"]
+
+if not data_df.empty and "Typ" in data_df.columns:
+    phase_notes = data_df[
+        (data_df["Typ"] == "Symptom-Notiz") &
+        (data_df["Phase"] == info["name"])
+    ]
+else:
+    phase_notes = pd.DataFrame()
 
     if not phase_notes.empty:
         st.markdown(f"#### Frühere Notizen in der {info['name']}:")

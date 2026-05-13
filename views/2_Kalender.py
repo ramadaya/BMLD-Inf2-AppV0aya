@@ -80,6 +80,7 @@ with st.form("period_form"):
     ##########
     if submitted:
         new_row = pd.DataFrame([{
+            "Typ": "Kalender",
             "Datum": period_start,
             "Zykluslänge": cycle_length,
             "Periodendauer": period_length

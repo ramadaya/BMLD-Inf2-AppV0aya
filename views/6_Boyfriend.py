@@ -54,9 +54,19 @@ def calculate_cycle_phases(period_start: date, cycle_length: int = 28, period_le
     return events, next_period
 
 # --- Load saved data ---
-FILE = "events.csv"
-if os.path.exists(FILE):
-    df = pd.read_csv(FILE)
+# --- Load saved data from shared data_df ---
+if "data_df" not in st.session_state:
+    st.session_state["data_df"] = pd.DataFrame()
+
+df = st.session_state["data_df"]
+
+# Nur Kalender-Einträge nehmen
+if not df.empty and "Typ" in df.columns:
+    df = df[df["Typ"] == "Kalender"]
+else:
+    df = pd.DataFrame(columns=["Typ", "Datum", "Zykluslänge", "Periodendauer"])
+all_events = []
+if not df.empty:
     df["Datum"] = pd.to_datetime(df["Datum"]).dt.date
 
 # --- Build calendar events ---
@@ -89,50 +99,66 @@ calendar_options = {
 calendar(events=all_events, options=calendar_options)
 
 phase = get_current_phase()
-info = PHASE_INFO[phase]
 
-PHASE_TIPPS = {
-    "menstruation": {
-        "title":"🔴 Menstruation",
-        "texts": ["Schokolade oder Lieblingssnacks", 
-                  "Wärmflasche oder Heizkissen gegen Krämpfe", 
-                  "Kuscheln", 
-                  "Einfach zuhören und da sein"]
-    },
-    "follikel": {
-        "title": "🌱 Follikelphase",
-        "texts": ["Unternehmungen vorschlagen (Spaziergänge, Dates)",
-                  "Trips planen",
-                  "Neue Aktivitäten ausprobieren"]
-    },
-    "eisprung": {
-        "title": "✨ Eisprung",
-        "texts": ["ACHTUNG Schwangerschaft möglich!!!",
-                  "Blumen schenken",
-                  "Komplimente machen",
-                  "Dates planen"]
-    },
-    "luteal": {
-        "title": "🌙 Lutealphase",
-        "texts": ["Mehr Ruhe & Verständnis",
-                  "Emotionaler Support",
-                  "Geduldig sein",
-                  "Film schauen und zu Hause entspannen"]
+if phase is None:
+    st.info("Noch keine aktuelle Phase vorhanden. Bitte zuerst im Kalender deine Periode speichern.")
+
+else:
+    info = PHASE_INFO[phase]
+
+    PHASE_TIPPS = {
+        "menstruation": {
+            "title":"🔴 Menstruation",
+            "texts": [
+                "Schokolade oder Lieblingssnacks",
+                "Wärmflasche oder Heizkissen gegen Krämpfe",
+                "Kuscheln",
+                "Einfach zuhören und da sein"
+            ]
+        },
+
+        "follikel": {
+            "title": "🌱 Follikelphase",
+            "texts": [
+                "Unternehmungen vorschlagen (Spaziergänge, Dates)",
+                "Trips planen",
+                "Neue Aktivitäten ausprobieren"
+            ]
+        },
+
+        "eisprung": {
+            "title": "✨ Eisprung",
+            "texts": [
+                "ACHTUNG Schwangerschaft möglich!!!",
+                "Blumen schenken",
+                "Komplimente machen",
+                "Dates planen"
+            ]
+        },
+
+        "luteal": {
+            "title": "🌙 Lutealphase",
+            "texts": [
+                "Mehr Ruhe & Verständnis",
+                "Emotionaler Support",
+                "Geduldig sein",
+                "Film schauen und zu Hause entspannen"
+            ]
+        }
     }
-}
 
-text = PHASE_TIPPS[phase]
-items = "".join(f"<li> {text}</li>" for text in text["texts"])
+    text = PHASE_TIPPS[phase]
+    items = "".join(f"<li>{item}</li>" for item in text["texts"])
 
-st.markdown(
-    f"""
-    <div style="background-color:{info['color']}22; 
-                border-left: 5px solid {info['color']}; 
-                padding: 1rem; 
-                border-radius: 8px;">
-        <ul>{text['title']}</ul>
-        <ul>{items}</ul>
-    </div>
-    """,
-    unsafe_allow_html=True
-)
+    st.markdown(
+        f"""
+        <div style="background-color:{info['color']}22; 
+                    border-left: 5px solid {info['color']}; 
+                    padding: 1rem; 
+                    border-radius: 8px;">
+            <h3>{text['title']}</h3>
+            <ul>{items}</ul>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
