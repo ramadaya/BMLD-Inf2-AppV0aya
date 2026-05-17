@@ -50,6 +50,7 @@ else:
     "Datum",
     value=pd.Timestamp.today()
 )
+
     today = str(selected_date)
 
     already_logged = (
