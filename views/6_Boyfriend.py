@@ -23,7 +23,7 @@ def calculate_cycle_phases(period_start: date, cycle_length: int = 28, period_le
 
     # Phase 2: Follicular phase (after period until ovulation)
     follicular_start = period_start + timedelta(days=period_length)
-    follicular_end = period_start + timedelta(days=12)  # ~Day 6–12
+    follicular_end = period_start + timedelta(days=13)  # ~Day 6–13
     for i in range((follicular_end - follicular_start).days + 1):
         events.append({
             "title": "🌱 Follikelphase",
