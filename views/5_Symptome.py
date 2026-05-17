@@ -46,7 +46,11 @@ else:
     st.markdown("---")
     st.subheader("📊 Tägliches Symptom-Tracking")
 
-    today = str(pd.Timestamp.today().date())
+    selected_date = st.date_input(
+    "Datum",
+    value=pd.Timestamp.today()
+)
+    today = str(selected_date)
 
     already_logged = (
         not symptoms_df.empty
