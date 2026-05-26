@@ -22,4 +22,4 @@
 
 ### Was wir beim nächsten Mal anders machen würden
 - rückblickend würden wir von Anfang an eine klarere Datenbankstruktur planen, anstatt mehrere CSV-Dateien zu verwenden.
-- mit den gewonnenen Erfahrungen würden wir ein nächstes Projekt noch strukturierter und gezielter angehen, insgesamt hat die Entwicklung jedoch gut funktioniert und wir sind zufireden mit dem Ergebnis.
+- Mit den gewonnenen Erfahrungen würden wir ein nächstes Projekt noch strukturierter und gezielter angehen, insgesamt hat die Entwicklung jedoch gut funktioniert und wir sind zufireden mit dem Ergebnis.
