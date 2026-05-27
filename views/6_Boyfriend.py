@@ -2,8 +2,9 @@ import streamlit as st
 import pandas as pd
 from datetime import date, timedelta
 from streamlit_calendar import calendar
-from functions.render import get_data_df, get_calendar_df 
+from functions.data_utils import get_data_df, get_calendar_df 
 from functions.cycle_utils import get_current_phase, PHASE_INFO
+from functions.render import render_header
 
 PHASE_COLORS = {
     "menstruation": "#e63946",
@@ -52,14 +53,8 @@ PHASE_TIPPS = {
 }
 
 
-def render_header():
-    col1, col2 = st.columns([1, 5])
 
-    with col1:
-        st.image("docs/logo.png", width=70)
-
-    with col2:
-        st.title("❤️ Boyfriend")
+render_header("❤️ Boyfriend", logo_width=70)
 
 
 def calculate_cycle_phases(
@@ -162,7 +157,6 @@ def render_partner_tips(phase):
     )
 
 
-render_header()
 
 st.markdown(
     """

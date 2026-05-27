@@ -2,7 +2,8 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 from functions.cycle_utils import get_current_phase, PHASE_INFO
-from functions.render import get_data_df
+from functions.data_utils import get_data_df
+from functions.render import render_header
 
 SYMPTOM_COLS = [
     "⚡️ Energie",
@@ -13,15 +14,7 @@ SYMPTOM_COLS = [
     "😊 Stimmung",
 ]
 
-col1, col2 = st.columns([1, 5])
-
-with col1:
-    st.image("docs/logo.png", width=70)
-
-with col2:
-    st.title("🩺 Symptome")
-
-data_df = get_data_df()
+render_header("🩺 Symptome", logo_width=70)
 
 
 def save_data():

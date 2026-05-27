@@ -1,17 +1,11 @@
 import streamlit as st
 import pandas as pd
 from functions.cycle_utils import get_current_phase, PHASE_INFO
-from functions.render import get_data_df
+from functions.data_utils import get_data_df
+from functions.render import render_header
 
-def render_header():
-    """Show page logo and title."""
-    col1, col2 = st.columns([1, 5])
+render_header("👟 Sport", logo_width=70)
 
-    with col1:
-        st.image("docs/logo.png", width=70)
-
-    with col2:
-        st.title("👟 Sport")
 
 
 def render_sport_recommendations(info):
@@ -126,7 +120,6 @@ def render_phase_notes(phase_notes, info):
         )
 
 
-render_header()
 
 data_df = get_data_df()
 phase = get_current_phase()

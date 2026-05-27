@@ -3,16 +3,11 @@ import pandas as pd
 from datetime import date, timedelta
 from streamlit_calendar import calendar
 from utils.data_manager import DataManager
-from functions.render import get_data_df, get_calendar_df
+from functions.data_utils import get_data_df, get_calendar_df
 from functions.cycle_utils import calculate_cycle_phases
+from functions.render import render_header
 
-col1, col2 = st.columns([1, 5])
-
-with col1:
-    st.image("docs/logo.png", width=70)
-
-with col2:
-    st.title("Zyklus-Kalender 🌸")
+render_header("Zyklus-Kalender 🌸", logo_width=70)
 
 
 PHASE_COLORS = {
