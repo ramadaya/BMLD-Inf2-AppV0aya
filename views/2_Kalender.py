@@ -3,7 +3,7 @@ import pandas as pd
 from datetime import date, timedelta
 from streamlit_calendar import calendar
 from utils.data_manager import DataManager
-
+from functions.render import get_data_df
 col1, col2 = st.columns([1, 5])
 
 with col1:
@@ -67,13 +67,6 @@ def calculate_cycle_phases(
         })
 
     return events, next_period
-
-
-def get_data_df():
-    """Return shared app data from session state."""
-    if "data_df" not in st.session_state:
-        st.session_state["data_df"] = pd.DataFrame()
-    return st.session_state["data_df"]
 
 
 def get_calendar_df(data_df):

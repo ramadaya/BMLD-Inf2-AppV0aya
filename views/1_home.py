@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from datetime import date
 from functions.cycle_utils import get_current_phase, PHASE_INFO
-
+from functions.render import get_data_df
 col1, col2 = st.columns([1, 5])
 
 with col1:
@@ -19,13 +19,6 @@ SYMPTOM_COLS = [
     "😴 Müdigkeit",
     "😊 Stimmung",
 ]
-
-
-def get_data_df():
-    if "data_df" not in st.session_state:
-        st.session_state["data_df"] = pd.DataFrame()
-    return st.session_state["data_df"]
-
 
 def render_navigation():
     st.markdown("### 🔗 Schnellzugriff")

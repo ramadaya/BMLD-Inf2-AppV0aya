@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 from functions.cycle_utils import get_current_phase, PHASE_INFO
-
+from functions.render import get_data_df
 
 def render_header():
     """Show page logo and title."""
@@ -12,13 +12,6 @@ def render_header():
 
     with col2:
         st.title("👟 Sport")
-
-
-def get_data_df():
-    """Return shared app data from session state."""
-    if "data_df" not in st.session_state:
-        st.session_state["data_df"] = pd.DataFrame()
-    return st.session_state["data_df"]
 
 
 def render_sport_recommendations(info):

@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 from functions.cycle_utils import get_current_phase, PHASE_INFO
+from functions.render import get_data_df
 
 SYMPTOM_COLS = [
     "⚡️ Energie",
@@ -20,10 +21,10 @@ with col1:
 with col2:
     st.title("🩺 Symptome")
 
-if "data_df" not in st.session_state:
-    st.session_state["data_df"] = pd.DataFrame()
+# if "data_df" not in st.session_state:
+#     st.session_state["data_df"] = pd.DataFrame()
 
-data_df = st.session_state["data_df"]
+data_df = get_data_df()
 
 
 def save_data():
