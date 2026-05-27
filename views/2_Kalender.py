@@ -4,7 +4,7 @@ from datetime import date, timedelta
 from streamlit_calendar import calendar
 from utils.data_manager import DataManager
 from functions.render import get_data_df, get_calendar_df
-from functions.cycle_utils import calculate_cycle_phases 
+from functions.cycle_utils import calculate_cycle_phases
 
 col1, col2 = st.columns([1, 5])
 
