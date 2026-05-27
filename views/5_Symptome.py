@@ -21,9 +21,6 @@ with col1:
 with col2:
     st.title("🩺 Symptome")
 
-# if "data_df" not in st.session_state:
-#     st.session_state["data_df"] = pd.DataFrame()
-
 data_df = get_data_df()
 
 

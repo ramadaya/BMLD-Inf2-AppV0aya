@@ -3,7 +3,9 @@ import pandas as pd
 from datetime import date, timedelta
 from streamlit_calendar import calendar
 from utils.data_manager import DataManager
-from functions.render import get_data_df
+from functions.render import get_data_df, get_calendar_df
+from functions.cycle_utils import calculate_cycle_phases 
+
 col1, col2 = st.columns([1, 5])
 
 with col1:
@@ -19,76 +21,6 @@ PHASE_COLORS = {
     "eisprung": "#2a9d8f",
     "luteal": "#6a4c93",
 }
-
-
-def calculate_cycle_phases(
-    period_start: date,
-    cycle_length: int = 28,
-    period_length: int = 5,
-):
-    """Calculate calendar events for the four cycle phases."""
-    events = []
-
-    for i in range(period_length):
-        events.append({
-            "title": "🔴 Menstruation",
-            "start": str(period_start + timedelta(days=i)),
-            "color": PHASE_COLORS["menstruation"],
-        })
-
-    ovulation_day = period_start + timedelta(days=cycle_length - 14)
-
-    follicular_start = period_start + timedelta(days=period_length)
-    follicular_end = ovulation_day - timedelta(days=1)
-
-    for i in range((follicular_end - follicular_start).days + 1):
-        events.append({
-            "title": "🌱 Follikelphase",
-            "start": str(follicular_start + timedelta(days=i)),
-            "color": PHASE_COLORS["follikel"],
-        })
-
-    for i in range(3):
-        events.append({
-            "title": "🐣 Eisprung",
-            "start": str(ovulation_day + timedelta(days=i)),
-            "color": PHASE_COLORS["eisprung"],
-        })
-
-    luteal_start = ovulation_day + timedelta(days=3)
-    next_period = period_start + timedelta(days=cycle_length)
-    luteal_days = (next_period - luteal_start).days
-
-    for i in range(luteal_days):
-        events.append({
-            "title": "🌙 Lutealphase",
-            "start": str(luteal_start + timedelta(days=i)),
-            "color": PHASE_COLORS["luteal"],
-        })
-
-    return events, next_period
-
-
-def get_calendar_df(data_df):
-    """Return cleaned calendar entries."""
-    if data_df.empty or "Typ" not in data_df.columns:
-        return pd.DataFrame(
-            columns=["Typ", "Datum", "Zykluslänge", "Periodendauer"]
-        )
-
-    calendar_df = data_df[data_df["Typ"] == "Kalender"].copy()
-
-    calendar_df = calendar_df.dropna(
-        subset=["Datum", "Zykluslänge", "Periodendauer"]
-    )
-
-    if not calendar_df.empty:
-        calendar_df["Datum"] = pd.to_datetime(
-            calendar_df["Datum"],
-            errors="coerce"
-        ).dt.date
-
-    return calendar_df
 
 
 def save_calendar_entry(period_start, cycle_length, period_length):
@@ -156,7 +88,7 @@ def build_calendar_events(calendar_df):
 
     last_row = calendar_df.iloc[-1]
 
-    return calculate_cycle_phases(
+    return calculate_cycle_phases(PHASE_COLORS,
         period_start=last_row["Datum"],
         cycle_length=int(last_row["Zykluslänge"]),
         period_length=int(last_row["Periodendauer"]),

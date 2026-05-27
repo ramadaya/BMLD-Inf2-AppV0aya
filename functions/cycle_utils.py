@@ -75,3 +75,51 @@ PHASE_INFO = {
         "symptoms": ["PMS möglich", "Blähungen", "Brustspannen", "Stimmungsschwankungen"]
     }
 }
+
+def calculate_cycle_phases(
+    PHASE_COLORS,
+    period_start: date,
+    cycle_length: int = 28,
+    period_length: int = 5,  
+):
+    """Calculate calendar events for the four cycle phases."""
+    events = []
+
+    for i in range(period_length):
+        events.append({
+            "title": "🔴 Menstruation",
+            "start": str(period_start + timedelta(days=i)),
+            "color": PHASE_COLORS["menstruation"],
+        })
+
+    ovulation_day = period_start + timedelta(days=cycle_length - 14)
+
+    follicular_start = period_start + timedelta(days=period_length)
+    follicular_end = ovulation_day - timedelta(days=1)
+
+    for i in range((follicular_end - follicular_start).days + 1):
+        events.append({
+            "title": "🌱 Follikelphase",
+            "start": str(follicular_start + timedelta(days=i)),
+            "color": PHASE_COLORS["follikel"],
+        })
+
+    for i in range(3):
+        events.append({
+            "title": "🐣 Eisprung",
+            "start": str(ovulation_day + timedelta(days=i)),
+            "color": PHASE_COLORS["eisprung"],
+        })
+
+    luteal_start = ovulation_day + timedelta(days=3)
+    next_period = period_start + timedelta(days=cycle_length)
+    luteal_days = (next_period - luteal_start).days
+
+    for i in range(luteal_days):
+        events.append({
+            "title": "🌙 Lutealphase",
+            "start": str(luteal_start + timedelta(days=i)),
+            "color": PHASE_COLORS["luteal"],
+        })
+
+    return events, next_period

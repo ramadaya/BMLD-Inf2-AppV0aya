@@ -2,6 +2,7 @@ import streamlit as st
 import pandas as pd
 from datetime import date, timedelta
 from streamlit_calendar import calendar
+from functions.render import get_data_df, get_calendar_df 
 from functions.cycle_utils import get_current_phase, PHASE_INFO
 
 PHASE_COLORS = {
@@ -107,31 +108,6 @@ def calculate_cycle_phases(
     return events
 
 
-def get_calendar_df():
-    if "data_df" not in st.session_state:
-        st.session_state["data_df"] = pd.DataFrame()
-
-    data_df = st.session_state["data_df"]
-
-    if data_df.empty or "Typ" not in data_df.columns:
-        return pd.DataFrame(
-            columns=["Typ", "Datum", "Zykluslänge", "Periodendauer"]
-        )
-
-    calendar_df = data_df[data_df["Typ"] == "Kalender"].copy()
-    calendar_df = calendar_df.dropna(
-        subset=["Datum", "Zykluslänge", "Periodendauer"]
-    )
-
-    if not calendar_df.empty:
-        calendar_df["Datum"] = pd.to_datetime(
-            calendar_df["Datum"],
-            errors="coerce"
-        ).dt.date
-
-    return calendar_df
-
-
 def render_calendar(calendar_df):
     if calendar_df.empty:
         st.warning("⚠️ Bitte zuerst im Kalender die Periode speichern.")
@@ -194,8 +170,9 @@ st.markdown(
     wie sie in den verschiedenen Zyklusphasen unterstützen können.
     """
 )
+data_df = get_data_df()
 
-calendar_df = get_calendar_df()
+calendar_df = get_calendar_df(data_df)
 render_calendar(calendar_df)
 
 phase = get_current_phase()
