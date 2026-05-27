@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd 
 from datetime import date
 from functions.cycle_utils import PHASE_INFO
+from functions.sport_utils import save_sport_note
+
 
 SYMPTOM_COLS = [
     "⚡️ Energie",
@@ -310,4 +312,78 @@ def render_partner_tips(phase):
     )
 
 
+def render_sport_recommendations(info):
+    """Show sport recommendations for the current phase."""
+    st.markdown(f"## Empfehlungen für die {info['name']}")
+
+    items = "".join(
+        f"<li>{activity}</li>"
+        for activity in info["sports"]
+    )
+
+    st.markdown(
+        f"""
+        <div style="background-color:{info['color']}22;
+                    border-left: 5px solid {info['color']};
+                    padding: 1rem;
+                    border-radius: 8px;">
+            <ul>{items}</ul>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+def render_note_form(info):
+    """Show form for adding sport notes."""
+    st.markdown("---")
+    st.subheader("📝 Meine Notizen")
+
+    with st.form("sport_notes_form"):
+        note_text = st.text_area(
+            "Wie fühlst du dich heute?",
+            placeholder="z.B. viel Energie, Kopfschmerzen, gute Stimmung...",
+        )
+
+        note_date = st.date_input(
+            "Datum",
+            value=pd.Timestamp.today(),
+        )
+
+        save_note = st.form_submit_button("Notiz speichern")
+
+        if save_note:
+            if note_text.strip():
+                save_sport_note(
+                    note_text=note_text,
+                    note_date=note_date,
+                    phase_name=info["name"],
+                )
+                st.success("✅ Notiz gespeichert!")
+                st.rerun()
+            else:
+                st.warning("Bitte schreibe zuerst eine Notiz.")
+
+
+def render_phase_notes(phase_notes, info):
+    """Show previous notes for the current phase."""
+    if phase_notes.empty:
+        st.caption("Noch keine Notizen für diese Phase gespeichert.")
+        return
+
+    st.markdown(f"#### Frühere Notizen in der {info['name']}:")
+
+    for _, row in phase_notes.iloc[::-1].iterrows():
+        st.markdown(
+            f"""
+            <div style="background-color:{info['color']}11;
+                        border-left: 3px solid {info['color']};
+                        padding: 0.6rem 1rem;
+                        border-radius: 6px;
+                        margin-bottom: 0.5rem;">
+                <small>📅 {row['Datum']}</small><br>
+                {row['Notiz']}
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
 
