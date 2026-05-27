@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd 
-from datetime import date 
+from datetime import date
+from functions.cycle_utils import PHASE_INFO
 
 SYMPTOM_COLS = [
     "⚡️ Energie",
@@ -229,4 +230,82 @@ def render_footer():
     )
 
     st.caption("Autor: Samuel Wehrli (wehs@zhaw.ch)")
+
+
+PHASE_TIPPS = {
+    "menstruation": {
+        "title": "🔴 Menstruation",
+        "texts": [
+            "Schokolade oder Lieblingssnacks mitbringen",
+            "Wärmflasche oder Heizkissen anbieten",
+            "Kuscheln oder einfach da sein",
+            "Geduldig zuhören und Verständnis zeigen",
+        ],
+    },
+    "follikel": {
+        "title": "🌱 Follikelphase",
+        "texts": [
+            "Spaziergänge oder Dates vorschlagen",
+            "Gemeinsame Pläne machen",
+            "Neue Aktivitäten ausprobieren",
+            "Motivation und gute Laune unterstützen",
+        ],
+    },
+    "eisprung": {
+        "title": "✨ Eisprung",
+        "texts": [
+            "Blumen oder kleine Aufmerksamkeiten schenken",
+            "Komplimente machen",
+            "Ein schönes Date planen",
+            "Achtsam sein: Schwangerschaft ist möglich",
+        ],
+    },
+    "luteal": {
+        "title": "🌙 Lutealphase",
+        "texts": [
+            "Mehr Ruhe und Verständnis zeigen",
+            "Emotionalen Support geben",
+            "Geduldig bleiben",
+            "Einen entspannten Filmabend vorschlagen",
+        ],
+    },
+}
+
+
+def render_partner_tips(phase):
+    if phase is None:
+        st.info(
+            "Noch keine aktuelle Phase vorhanden. "
+            "Bitte zuerst im Kalender deine Periode speichern."
+        )
+        return
+
+    info = PHASE_INFO[phase]
+    text = PHASE_TIPPS[phase]
+
+    items = "".join(f"<li>{item}</li>" for item in text["texts"])
+
+    st.markdown(f"## Tipps für die {text['title']}")
+
+    st.markdown(
+        f"""
+        <div style="background-color:{info['color']}22;
+                    border-left: 5px solid {info['color']};
+                    padding: 1rem;
+                    border-radius: 8px;">
+            <ul>{items}</ul>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+
+st.markdown(
+    """
+    Diese Seite hilft Partnerinnen und Partnern zu verstehen,
+    wie sie in den verschiedenen Zyklusphasen unterstützen können.
+    """
+)
+
 
