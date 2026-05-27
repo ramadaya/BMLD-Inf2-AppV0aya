@@ -232,6 +232,16 @@ def render_footer():
     st.caption("Autor: Samuel Wehrli (wehs@zhaw.ch)")
 
 
+def render_partner_intro():
+
+    st.markdown(
+        """
+        💕 Diese Seite unterstützt Partnerinnen und Partner dabei,
+        die verschiedenen Zyklusphasen besser zu verstehen  
+        und liebevoll Unterstützung im Alltag zu geben.
+        """
+    )
+
 PHASE_TIPPS = {
     "menstruation": {
         "title": "🔴 Menstruation",
@@ -299,13 +309,5 @@ def render_partner_tips(phase):
         unsafe_allow_html=True,
     )
 
-
-
-st.markdown(
-    """
-    Diese Seite hilft Partnerinnen und Partnern zu verstehen,
-    wie sie in den verschiedenen Zyklusphasen unterstützen können.
-    """
-)
 
 
