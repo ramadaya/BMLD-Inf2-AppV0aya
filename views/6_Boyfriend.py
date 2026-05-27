@@ -3,7 +3,7 @@ import pandas as pd
 from datetime import date, timedelta
 from streamlit_calendar import calendar
 from functions.data_utils import get_data_df, get_calendar_df 
-from functions.cycle_utils import get_current_phase, PHASE_INFO
+from functions.cycle_utils import get_current_phase, PHASE_INFO, calculate_cycle_phases
 from functions.render import render_header
 
 PHASE_COLORS = {
@@ -57,64 +57,23 @@ PHASE_TIPPS = {
 render_header("❤️ Boyfriend", logo_width=70)
 
 
-def calculate_cycle_phases(
-    period_start: date,
-    cycle_length: int = 28,
-    period_length: int = 5,
-):
-    events = []
-
-    for i in range(period_length):
-        events.append({
-            "title": "🔴 Menstruation",
-            "start": str(period_start + timedelta(days=i)),
-            "color": PHASE_COLORS["menstruation"],
-        })
-
-    ovulation_day = period_start + timedelta(days=cycle_length - 14)
-
-    follicular_start = period_start + timedelta(days=period_length)
-    follicular_end = ovulation_day - timedelta(days=1)
-
-    for i in range((follicular_end - follicular_start).days + 1):
-        events.append({
-            "title": "🌱 Follikelphase",
-            "start": str(follicular_start + timedelta(days=i)),
-            "color": PHASE_COLORS["follikel"],
-        })
-
-    for i in range(3):
-        events.append({
-            "title": "🐣 Eisprung",
-            "start": str(ovulation_day + timedelta(days=i)),
-            "color": PHASE_COLORS["eisprung"],
-        })
-
-    luteal_start = ovulation_day + timedelta(days=3)
-    next_period = period_start + timedelta(days=cycle_length)
-
-    for i in range((next_period - luteal_start).days):
-        events.append({
-            "title": "🌙 Lutealphase",
-            "start": str(luteal_start + timedelta(days=i)),
-            "color": PHASE_COLORS["luteal"],
-        })
-
-    return events
-
-
 def render_calendar(calendar_df):
+
     if calendar_df.empty:
         st.warning("⚠️ Bitte zuerst im Kalender die Periode speichern.")
         return
 
     last_row = calendar_df.iloc[-1]
 
-    events = calculate_cycle_phases(
-        period_start=last_row["Datum"],
+    events, _ = calculate_cycle_phases(
+        period_start=pd.to_datetime(last_row["Datum"]).date(),
         cycle_length=int(last_row["Zykluslänge"]),
         period_length=int(last_row["Periodendauer"]),
+        PHASE_COLORS=PHASE_COLORS,
     )
+
+    for event in events:
+        event["start"] = str(event["start"])
 
     calendar_options = {
         "initialView": "dayGridMonth",
