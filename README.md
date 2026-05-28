@@ -4,6 +4,9 @@ Grundlage der App bildet das Konzept des cycle syncing, wobei man den lifestyle 
 
 Ziel der App ist es, mehr Bewusstsein für den eigenen Zyklus zu schaffen und das Wohlbefinden ganzheitlich zu unterstützen.
 
+## Link zur App
+https://berry-cycle.streamlit.app/ 
+
 ## Gruppe
 - Lercara Sofia (lercasof@students.zhaw.ch)
 - Ramadan Aya (ramadaya@students.zhaw.ch)
