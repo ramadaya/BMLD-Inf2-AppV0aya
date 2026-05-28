@@ -17,7 +17,6 @@ else:
 
     render_nutrition_recommendations(info)
     render_recipe_form(info)
-
     updated_data_df = get_data_df()
     recipes_df = get_phase_recipes(updated_data_df, info["name"])
 

@@ -8,12 +8,8 @@ from functions.render import render_header, render_partner_tips, render_partner_
 
 render_header("❤️ Boyfriend", logo_width=70)
 
-
-
-
 data_df = get_data_df()
 calendar_df = get_calendar_df(data_df)
-
 events, _ = build_calendar_events(calendar_df)
 render_partner_intro()
 render_calendar(events)
