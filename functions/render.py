@@ -4,16 +4,8 @@ from datetime import date
 from functions.cycle_utils import PHASE_INFO
 from functions.sport_utils import save_sport_note
 from functions.nutrition_utils import save_recipe, delete_recipe
+from functions.symptom_utils import SYMPTOM_COLS
 
-
-SYMPTOM_COLS = [
-    "⚡️ Energie",
-    "😣 Schmerzen",
-    "🧠 Fokus",
-    "🍫 Heißhunger",
-    "😴 Müdigkeit",
-    "😊 Stimmung",
-]
 
 # Header with logo and title 
 def render_header(title, logo_width=70):
@@ -239,9 +231,9 @@ def render_partner_intro():
 
     st.markdown(
         """
-        💕 Diese Seite unterstützt Partnerinnen und Partner dabei,
-        die verschiedenen Zyklusphasen besser zu verstehen  
-        und liebevoll Unterstützung im Alltag zu geben.
+        💞 Diese Seite hilft Partner:innen,
+        die Zyklusphasen besser zu verstehen
+        und liebevoll zu unterstützen.
         """
     )
 
@@ -477,3 +469,4 @@ def render_recipe_list(recipes_df, info):
             if st.button("🗑 Löschen", key=f"delete_recipe_{index}"):
                 delete_recipe(index)
                 st.rerun()
+

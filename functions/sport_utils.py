@@ -1,5 +1,6 @@
 import streamlit as st 
-import pandas as pd 
+import pandas as pd
+from functions.data_utils import save_data
 
 def save_sport_note(note_text, note_date, phase_name):
     """Save sport note in shared user data."""
@@ -15,10 +16,8 @@ def save_sport_note(note_text, note_date, phase_name):
         ignore_index=True,
     )
 
-    st.session_state["data_manager"].save_user_data(
-        st.session_state["data_df"],
-        "data.csv",
-    )
+    save_data()
+    
 
 def get_phase_notes(data_df, phase_name):
     """Return saved sport notes for the current phase."""

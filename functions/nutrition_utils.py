@@ -1,5 +1,6 @@
 import streamlit as st 
-import pandas as pd 
+import pandas as pd
+from functions.data_utils import save_data
 
 def save_recipe(recipe_name, ingredients, instructions, phase_name):
     """Save a new recipe in shared user data."""
@@ -17,10 +18,9 @@ def save_recipe(recipe_name, ingredients, instructions, phase_name):
         ignore_index=True,
     )
 
-    st.session_state["data_manager"].save_user_data(
-        st.session_state["data_df"],
-        "data.csv",
-    )
+    save_data()
+
+    
 
 
 def get_phase_recipes(data_df, phase_name):

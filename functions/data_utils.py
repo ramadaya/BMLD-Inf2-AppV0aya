@@ -8,6 +8,13 @@ def get_data_df():
         st.session_state["data_df"] = pd.DataFrame()
     return st.session_state["data_df"]
 
+def save_data():
+    st.session_state["data_manager"].save_user_data(
+        st.session_state["data_df"],
+        "data.csv"
+    )
+
+
 def get_calendar_df(data_df):
     """Return cleaned calendar entries."""
     if data_df.empty or "Typ" not in data_df.columns:
