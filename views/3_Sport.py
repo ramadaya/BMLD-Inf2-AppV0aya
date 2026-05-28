@@ -1,5 +1,4 @@
 import streamlit as st
-import pandas as pd
 from functions.cycle_utils import get_current_phase, PHASE_INFO
 from functions.data_utils import get_data_df
 from functions.render import render_header, render_sport_recommendations, render_note_form, render_phase_notes
